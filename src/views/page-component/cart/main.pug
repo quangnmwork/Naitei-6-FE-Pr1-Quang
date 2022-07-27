@@ -1,0 +1,31 @@
+include ../../abstract/cart
+include ../../abstract/mixins
+
+- var thead = ['Ảnh','Tên sản phẩm','Giá','Số lượng','Tổng số','Xoá']
+- var items = [{img:`${assets}/1.jpg`,name:'Rượu vang',price:'32000',num:'1'},{img:`${assets}/1.jpg`,name:'Rượu vang',price:'32000',num:'1'},{img:`${assets}/1.jpg`,name:'Rượu vang',price:'32000',num:'1'},{img:`${assets}/1.jpg`,name:'Rượu vang',price:'32000',num:'1'},{img:`${assets}/1.jpg`,name:'Rượu vang',price:'32000',num:'1'}]
+.container-fluid.cart 
+    .container.my-4 
+        .row.gx-5
+            .col-lg-12 
+                +title({text:'Giỏ hàng'})
+            .cart-table
+                table.col-lg-12(cellspacing="0")
+                    thead.cart-head 
+                        tr
+                            each item in thead 
+                                th= item 
+                    tbody.cart-body 
+                        each item in items
+                            tr 
+                                td
+                                    img(src=item.img,'alt').img-fluid.cart-img
+                                td= item.name
+                                td.cart-bold= item.price 
+                                td= item.num
+                                td.cart-bold= item.price 
+                                td.cart-btn
+                                    span.bi.bi-trash
+            .col-lg-12.cart-group-btn
+                +button({text:'Tiếp tục mua hàng'})
+                +button({text:'Xoá'})
+                +button({text:'Cập nhật'})

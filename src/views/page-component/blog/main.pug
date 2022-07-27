@@ -1,0 +1,17 @@
+include ../../abstract/mixins
+- var desc='Vang nổ Thăng Long có hương vị đặc trưng của sản phẩm lên men tự nhiên từ hoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn. Vang Nổ thăng long';
+- var title = 'Vang thăng long';
+- var author = 'Giang';
+- var time = '30/12/2015';
+- var num = 60
+-var blogs=[{title,img:`${assets}/gallery-2.jpg`,author,time,desc},{title,img:`${assets}/gallery-3.jpg`,author,time,desc},{title,img:`${assets}/gallery-4.jpg`,author,time,desc},{title,img:`${assets}/gallery-2.jpg`,author,time,desc},{title,img:`${assets}/gallery-3.jpg`,author,time,desc},{title,img:`${assets}/gallery-4.jpg`,author,time,desc},{title,img:`${assets}/gallery-2.jpg`,author,time,desc},{title,img:`${assets}/gallery-3.jpg`,author,time,desc},{title,img:`${assets}/gallery-4.jpg`,author,time,desc}]
+
+.container-fluid.about 
+    .container
+        .row.gx-5 
+            .col-lg-12
+                +title({text:'Blog'})
+            .col-lg-12 
+                .blog-container 
+                    each item in blogs
+                        +blogItem(item)

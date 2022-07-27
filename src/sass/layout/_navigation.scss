@@ -2,9 +2,6 @@
   @include py(20px);
   background: var(--color-black);
 
-  @include py(20px);
-  background: var(--color-black);
-
   &-container {
     justify-content: space-between;
   }
@@ -26,7 +23,6 @@
       &:nth-child(2) {
         position: relative;
       }
-
       a {
         font-size: 13px;
         letter-spacing: 3px;
@@ -58,7 +54,6 @@
     }
     &-toggle:checked ~ &-menu {
       @include px(9rem);
-
       position: absolute;
       display: block;
       width: 100%;
@@ -70,7 +65,6 @@
       padding: 5px 0;
       border-bottom: 1px solid var(--color-primary);
     }
-
     &-title {
       width: auto !important;
     }
@@ -78,76 +72,69 @@
       display: flex;
       align-self: center;
       width: auto !important;
-
-      &-icon {
-        display: flex;
-        align-self: center;
-
-        font-size: 30px;
-        border: 2px solid var(--color-white);
-        padding: 2px 3px;
-        border-radius: 5px;
-      }
+      font-size: 30px;
+      border: 2px solid var(--color-white);
+      padding: 2px 3px;
+      border-radius: 5px;
+    }
+  }
+  &-dropdown {
+    position: absolute;
+    z-index: 50;
+    color: var(--color-dropdown);
+    background-color: var(--color-white);
+    border-bottom: 2px solid var(--color-primary);
+    box-shadow: var(--shadow);
+    top: calc(100% + 40px);
+    padding: 10px 24px;
+    left: -200%;
+    font-size: 14px;
+    line-height: 30px;
+    color: var(--color-dropdown);
+    &-container {
+      display: none;
     }
 
-    &-dropdown {
-      position: absolute;
-      z-index: 50;
-      color: var(--color-dropdown);
-      background-color: var(--color-white);
-      border-bottom: 2px solid var(--color-primary);
-      box-shadow: var(--shadow);
-      top: calc(100% + 40px);
-      padding: 10px 24px;
-      left: -200%;
-      font-size: 14px;
-      line-height: 30px;
-      color: var(--color-dropdown);
-      &-container {
-        display: none;
+    &-col {
+      list-style-type: none;
+    }
+    &-link {
+      white-space: nowrap;
+      a {
+        color: var(--color-dropdown);
       }
-
-      &-col {
-        list-style-type: none;
+    }
+    &-toggle {
+      display: none;
+    }
+    &-img {
+      width: 349px;
+    }
+    &-icon {
+      font-size: 13px;
+      letter-spacing: 3px;
+      text-align: right;
+      color: var(--color-white);
+      position: relative;
+      z-index: 200;
+      display: inline-block;
+      &:hover {
+        color: var(--color-primary);
       }
-      &-link {
-        white-space: nowrap;
-        a {
-          color: var(--color-dropdown);
-        }
-      }
-      &-toggle {
-        display: none;
-      }
+    }
+    &-toggle:checked + &-container {
+      display: block;
+    }
+    &-toggle:checked + &-container > &-content {
+      @include flex($align: center, $gap: 0 20px);
+    }
+    @include media-breakpoint-down($name: 'lg') {
       &-img {
-        width: 349px;
+        display: none;
       }
-      &-icon {
-        font-size: 13px;
-        letter-spacing: 3px;
-        text-align: right;
-        color: var(--color-white);
-        position: relative;
-        z-index: 200;
-        display: inline-block;
-        &:hover {
-          color: var(--color-primary);
-        }
-      }
-      &-toggle:checked + &-container {
-        display: block;
-      }
-      &-toggle:checked + &-container > &-content {
-        @include flex($align: center, $gap: 0 20px);
-      }
-      @include media-breakpoint-down($name: 'lg') {
-        &-img {
-          display: none;
-        }
-        & {
-          left: 0;
-          top: calc(100%);
-        }
+      & {
+        left: 0;
+        top: calc(100%);
       }
     }
   }
