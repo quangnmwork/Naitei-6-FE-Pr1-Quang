@@ -1,0 +1,54 @@
+.header {
+  font-size: 12px;
+  position: relative;
+
+  &-bg {
+    @include aspect-ratio(16, 9);
+    position: relative;
+    background-image: url('../../assets/slide-1.jpg');
+    height: 100%;
+
+    z-index: -5;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &-title {
+    color: black;
+  }
+
+  &-title {
+    @include flex($direction: column, $justify: center);
+    font-family: 'Dancing Script', cursive;
+    color: var(--color-white);
+    width: 100%;
+    letter-spacing: 2px;
+    text-align: center;
+    &-big {
+      font-size: 180px;
+    }
+    &-small {
+      font-size: 80px;
+    }
+  }
+  @include media-breakpoint-down($name: 'lg') {
+    &-title {
+      &-big {
+        font-size: 120px;
+      }
+      &-small {
+        font-size: 50px;
+      }
+    }
+  }
+  @include media-breakpoint-down($name: 'md') {
+    &-title {
+      &-big {
+        font-size: 80px;
+      }
+      &-small {
+        font-size: 30px;
+      }
+    }
+  }
+}

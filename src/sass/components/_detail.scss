@@ -1,0 +1,30 @@
+.detail {
+  margin-top: 29px;
+  &-slide {
+    @include flex($direction: column, $align: center);
+
+    &-img {
+      margin: 20px 0;
+      border-bottom: 1px solid var(--color-footer-link);
+      padding: 3px 0;
+      &--active {
+        border: 2px solid var(--color-primary);
+      }
+    }
+
+    &-btn {
+      cursor: pointer;
+      &:nth-of-type(1) {
+        margin-bottom: 30px;
+      }
+
+      &:nth-of-type(2) {
+        margin-top: 30px;
+      }
+
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+  }
+}

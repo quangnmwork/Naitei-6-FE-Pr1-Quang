@@ -1,0 +1,70 @@
+.info {
+  &-container {
+    @include flex($direction: column, $align: center);
+    text-align: center;
+  }
+
+  &-quote {
+    display: block;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    position: relative;
+    i {
+      @include absCenter();
+      display: inline-block;
+      font-size: 32px;
+    }
+  }
+
+  &-desc {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: var(--color-title-desc);
+    margin-top: 8px;
+    margin-bottom: 13px;
+    width: 70%;
+  }
+
+  &-author {
+    &-avatar {
+      display: block;
+      width: 102px;
+      height: 102px;
+      background-image: url('../../assets/author-2.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 10px;
+      margin-bottom: 17px;
+    }
+    &-name {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16px;
+    }
+    &-job {
+      color: var(--color-title-desc);
+      font-size: 12px;
+      font-style: italic;
+    }
+  }
+
+  &-dots {
+    margin-top: 38px;
+    span {
+      display: inline-block;
+      background-color: var(--color-gray);
+      width: 6px;
+      margin: 0 7px;
+      height: 6px;
+      border-radius: 50%;
+
+      &:nth-child(1) {
+        background-color: var(--color-primary);
+      }
+    }
+  }
+}

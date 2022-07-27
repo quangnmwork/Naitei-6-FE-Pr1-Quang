@@ -1,0 +1,42 @@
+include ../abstract/mixins
+-var asset = [{img:'../../assets/brand-3-rm.png'},{img:'../../assets/brand-3-rm.png'},{img:'../../assets/brand-3-rm.png'}]
+-var info = [{desc:'về chúng tôi',href:'#'},{desc:'giao hàng',href:'#'},{desc:'cảm nghĩ',href:'#'},{desc:'lưu trữ',href:'#'},{desc:'chính sách riêng tư',href:'#'}]
+-var shop = [{desc:'vận chuyển và trả hàng',href:'#'},{desc:'mua hàng an toàn',href:'#'},{desc:'vận quốc tế',href:'#'},{desc:'liên kết',href:'#'},{desc:'dịch vụ',href:'#'}]
+footer.footer.container-fluid 
+    .container 
+        .row.gx-5 
+            each item in asset
+                .col-lg-4.col-md-12.footer-brand 
+                    img(src=item.img).img-fluid
+        .row.gx-5.footer-main
+            .col-lg-2 
+                +footerCol({title:'Thông tin'})
+                    each item in info
+                        a(href=item.href).footer-link= item.desc
+            .col-lg-2 
+                +footerCol({title:'Mua hàng'})
+                    each item in shop
+                        a(href=item.href).footer-link= item.desc
+            .col-lg-4
+                +footerCol({title:'Gửi email'})
+                    p.footer-mail Gửi email cho chúng tôi để được hỗ trợ
+                    form
+                        input.footer-input(placeholder='Email...')
+                        input(type='submit',value='Gửi').btn.footer-btn
+                    .footer-social
+                        i.bi.bi-facebook
+                        i.bi.bi-youtube
+                        i.bi.bi-linkedin
+                        i.bi.bi-whatsapp
+
+            .col-lg-4 
+                +footerCol({title:'Liên hệ'})
+                    p.footer-address 
+                        i.bi.bi-geo-alt 
+                        ='123 đường ABC,Hà nội ,Việt Nam'
+                    p.footer-address
+                        i.bi.bi-telephone 
+                        ='84123456789'
+                    p.footer-address
+                        i.bi.bi-envelope 
+                        ='abc@example.com'

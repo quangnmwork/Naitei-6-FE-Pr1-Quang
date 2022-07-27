@@ -1,0 +1,18 @@
+.btn {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+  border: none;
+  outline: none;
+  border-radius: 1px;
+  transition: all 0.2s;
+  padding: 5px 20px;
+  &:hover {
+    background-color: var(--color-primary);
+  }
+}

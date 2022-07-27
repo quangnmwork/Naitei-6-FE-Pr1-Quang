@@ -1,0 +1,21 @@
+.intro {
+  &-heading {
+    text-align: center;
+    p {
+      margin-top: 20px;
+      padding: 0 55px;
+    }
+  }
+  &-btn {
+    padding: 6px 12px;
+    margin-top: 25px;
+  }
+  &-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    width: 300px;
+    height: 300px;
+  }
+}
