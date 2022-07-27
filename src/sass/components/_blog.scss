@@ -1,0 +1,31 @@
+.blog {
+  &-title {
+    color: var(--color-title-blog);
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-top: 18px;
+  }
+  &-img {
+    @include aspect-ratio(4, 3);
+  }
+  &-info {
+    color: var(--color-gray);
+    margin: 5px 0;
+    &-item:not(:last-child):after {
+      content: '|';
+      padding: 0 5px;
+    }
+  }
+
+  &-desc {
+    color: var(--color-title-desc);
+  }
+
+  &-more {
+    color: var(--color-gray);
+    cursor: pointer;
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
+}

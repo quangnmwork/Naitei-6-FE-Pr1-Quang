@@ -1,0 +1,14 @@
+@include make-grid-columns();
+
+.row {
+  @include make-row();
+<<<<<<< HEAD
+  & > * {
+    @include make-col-ready();
+  }
+=======
+  // & > * {
+  //   @include make-col-ready();
+  // }
+>>>>>>> e2988b7 (add section special product,header,lean more)
+}

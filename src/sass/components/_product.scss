@@ -1,0 +1,37 @@
+.product {
+  &-card {
+    text-align: center;
+  }
+
+  &-name {
+    font-size: 14px;
+    line-height: 31px;
+    color: var(--color-product);
+  }
+
+  &-price {
+    font-size: 21px;
+    line-height: 31px;
+    color: var(--color-primary);
+    &-discount {
+      margin-left: 7px;
+      color: var(--color-gray);
+      text-decoration: line-through;
+    }
+  }
+
+  &-btn {
+    margin-top: 18px;
+    padding: var(--btn-product);
+  }
+
+  &-img {
+    @include aspect-ratio(5, 6);
+  }
+
+  @include media-breakpoint-down($name: 'sm') {
+    &-card {
+      width: 100%;
+    }
+  }
+}
