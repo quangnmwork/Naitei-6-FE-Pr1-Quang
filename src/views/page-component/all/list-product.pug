@@ -1,0 +1,8 @@
+include ../../abstract/all
+- isGrid = false
+- var desc = 'Một hợp chất có trong rượu vang được gọi là resveratro có khả năng làm tăng tối đa tuổi thọ. Resveratro còn có khả năng ngăn chặn mật độ ôxy hoá của protein béo.'
+- var wine = [{name:'Rượu vang đà lạt',price:3200.000,img:`${assets}2.jpg`,desc},{name:'Rượu vang đà lạt',price:3200.000,img:`${assets}3.jpg`,desc},{name:'Rượu vang đà lạt',price:3200.000,img:`${assets}4.jpg`,desc},{name:'Rượu vang đà lạt',price:3200.000,img:`${assets}5.jpg`,desc}]
+
+.product-list
+    each item in wine 
+        +productListCard(item)

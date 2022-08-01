@@ -1,0 +1,24 @@
+.quantity {
+  &-box {
+    @include flex($align: center);
+  }
+
+  &-btn {
+    width: 29px;
+    height: 29px;
+    color: var(--color-detail-review);
+
+    &:focus {
+      outline: none;
+    }
+  }
+  &-input {
+    width: 60px;
+    height: 29px;
+    outline: none;
+    padding-left: 12px;
+    &:focus {
+      outline: none;
+    }
+  }
+}

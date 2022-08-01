@@ -96,18 +96,20 @@
       </div>
     </nav>
         <div class="container-fluid">
-          <div class="container gx-5 my-4"> 
-            <ul class="breadcrumb-list"> 
-              <li class="breadcrumb-item">Trang chủ</li>
-              <li class="breadcrumb-item">Sản phẩm</li>
-              <li class="breadcrumb-item breadcrumb-item--active">Rượu vang đỏ</li>
-            </ul>
+          <div class="container my-4"> 
+            <div class="row gx-5">
+              <ul class="breadcrumb-list"> 
+                <li class="breadcrumb-item">Trang chủ</li>
+                <li class="breadcrumb-item">Sản phẩm</li>
+                <li class="breadcrumb-item breadcrumb-item--active">Rượu vang đỏ</li>
+              </ul>
+            </div>
           </div>
         </div>
     <div class="container-fluid detail"> 
       <div class="container"> 
         <div class="row gx-5">
-          <div class="col-lg-1"> 
+          <div class="col-lg-1 col-md-12">
                 <div class="detail-slide"> <span class="detail-slide-btn"><i class="bi bi-arrow-up"></i></span>
                   <div class="detail-slide-img"><img class="img-fluid" src="../../assets//1.jpg" alt=""/></div>
                   <div class="detail-slide-img detail-slide-img--active"><img class="img-fluid" src="../../assets//2.jpg" alt=""/></div>
@@ -115,11 +117,140 @@
                   <div class="detail-slide-img"><img class="img-fluid" src="../../assets//4.jpg" alt=""/></div><span class="detail-slide-btn"> <i class="bi bi-arrow-down"></i></span>
                 </div>
           </div>
-          <div class="col-lg-6"> </div>
-          <div class="col-lg-5"> </div>
+          <div class="col-lg-6 col-md-12">
+            <div class="detail-img"> <img class="img-fluid" src="../../assets//6.jpg" alt=""/></div>
+          </div>
+          <div class="col-lg-5 col-md-12">
+            <div class="detail-info"> 
+                  <h2 class="text-uppercase">Chi tiết sản phẩm</h2><img src="../../assets/titleleft-dark.png" alt="Rượu vang champange"/>
+              <p class="detail-price">330.000</p>
+              <hr class="detail-divider"/>
+              <div class="detail-review"> 
+                <div class="detail-review-star"> <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></div>
+                <p class="detail-review-num">1 Review(S)</p>
+                <p class="detail-review-add">Add Your Review</p>
+              </div>
+              <hr class="detail-divider"/>
+            </div>
+            <p class="detail-title">Màu sắc</p>
+            <div class="detail-bg detail-bg--red"></div>
+            <div class="detail-bg detail-bg--dark detail-bg--active"></div>
+            <div class="detail-bg detail-bg-yellow"></div>
+            <p class="detail-title">Kích thước</p>
+                <select class="select">
+                  <option class="select-item" value="To">To</option>
+                  <option class="select-item" value="Nhỏ">Nhỏ</option>
+                </select>
+            <p class="detail-title">Số lượng 
+              <div class="detail-quantity"> 
+                    <form class="quantity-box" onClick="return false;;">
+                      <button class="quantity-btn">&minus;</button>
+                      <input class="quantity-input" type="number" name="qty" min="1" max="10" step="1" value="1"/>
+                      <button class="quantity-btn">&plus;</button>
+                    </form>
+                    <button class="btn detail-quantity-add">Add to cart</button>
+              </div>
+            </p>
+                <div class="detail-icon">
+                  <div class="detail-icon-box"> <i class="bi bi-suit-heart-fill"></i><span>Yêu thích</span></div>
+                  <div class="detail-icon-box"> <i class="bi bi-bar-chart-fill"></i><span>So sánh</span></div>
+                  <div class="detail-icon-box"> <i class="bi bi-envelope-fill"></i><span>Email</span></div>
+                </div>
+            <p class="detail-title">Mô tả</p>
+            <p>Một hợp chất có trong rượu vang được gọi là resveratro có khả năng làm tăng tối đa tuổi thọ. Resveratro còn có khả năng ngăn chặn mật độ ôxy hoá của protein béo.</p>
+          </div>
         </div>
       </div>
     </div>
+    <div class="container-fluid feature">
+      <div class="container"> 
+        <div class="row gx-5">
+          <div class="col-lg-8">
+            <div class="feature-tab"> 
+              <div class="feature-tab-item feature-tab-item--active">Đặc điểm nổi bật </div>
+              <div class="feature-tab-item">Thông tin sản phẩm</div>
+              <div class="feature-tab-item">Đánh giá</div>
+            </div>
+            <div class="feature-content"> 
+              <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+          </div>
+          <div class="col-lg-4"> <img class="img-fluid" src="../../assets//gallery-2.jpg" alt=""/></div>
+        </div>
+      </div>
+    </div>
+        <section class="container-fluid section-hot"></section>
+        <div class="container">
+              <div class="intro-heading">
+                <h2 class="intro-title">Sản phẩm bán chạy</h2><img src="../../assets/title-dark.png" alt="gioi thieu"/>
+              </div>
+          <div class="row gx-5 my-3">
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                  <div class="product-card"> 
+                    <div class="product-img">    <img class="img-fluid" src="../../assets/1.jpg" alt=""/>
+                      <div class="product-quick"> 
+                        <div class="product-quick-box"> <i class="bi bi-suit-heart-fill"></i><span>Yêu thích </span></div>
+                        <div class="product-quick-box"> <i class="bi bi-bar-chart-fill"></i><span>So sánh  </span></div>
+                      </div>
+                    </div>
+                    <div class="product-info"> 
+                      <h3 class="product-name">Rượu vang đà lạt</h3>
+                      <div class="product-price"> <span class="product-price-main">3200</span><span class="product-price-discount">490</span>
+                      </div>
+                      <button class="btn product-btn">ADD TO CART            </button>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                  <div class="product-card"> 
+                    <div class="product-img">    <img class="img-fluid" src="../../assets/2.jpg" alt=""/>
+                      <div class="product-quick"> 
+                        <div class="product-quick-box"> <i class="bi bi-suit-heart-fill"></i><span>Yêu thích </span></div>
+                        <div class="product-quick-box"> <i class="bi bi-bar-chart-fill"></i><span>So sánh  </span></div>
+                      </div>
+                    </div>
+                    <div class="product-info"> 
+                      <h3 class="product-name">Rượu vang đà lạt</h3>
+                      <div class="product-price"> <span class="product-price-main">3200</span><span class="product-price-discount">490</span>
+                      </div>
+                      <button class="btn product-btn">ADD TO CART            </button>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                  <div class="product-card"> 
+                    <div class="product-img">    <img class="img-fluid" src="../../assets/3.jpg" alt=""/>
+                      <div class="product-quick"> 
+                        <div class="product-quick-box"> <i class="bi bi-suit-heart-fill"></i><span>Yêu thích </span></div>
+                        <div class="product-quick-box"> <i class="bi bi-bar-chart-fill"></i><span>So sánh  </span></div>
+                      </div>
+                    </div>
+                    <div class="product-info"> 
+                      <h3 class="product-name">Rượu vang đà lạt</h3>
+                      <div class="product-price"> <span class="product-price-main">3200</span><span class="product-price-discount">490</span>
+                      </div>
+                      <button class="btn product-btn">ADD TO CART            </button>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                  <div class="product-card"> 
+                    <div class="product-img">    <img class="img-fluid" src="../../assets/4.jpg" alt=""/>
+                      <div class="product-quick"> 
+                        <div class="product-quick-box"> <i class="bi bi-suit-heart-fill"></i><span>Yêu thích </span></div>
+                        <div class="product-quick-box"> <i class="bi bi-bar-chart-fill"></i><span>So sánh  </span></div>
+                      </div>
+                    </div>
+                    <div class="product-info"> 
+                      <h3 class="product-name">Rượu vang đà lạt</h3>
+                      <div class="product-price"> <span class="product-price-main">3200</span><span class="product-price-discount">490</span>
+                      </div>
+                      <button class="btn product-btn">ADD TO CART            </button>
+                    </div>
+                  </div>
+            </div>
+          </div>
+        </div>
     <footer class="footer container-fluid"> 
       <div class="container"> 
         <div class="row gx-5"> 

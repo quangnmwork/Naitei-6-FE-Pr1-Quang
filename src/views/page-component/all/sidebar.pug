@@ -1,0 +1,17 @@
+include ../../abstract/all
+include ../../abstract/mixins
+- var sidebarList = [{title:'Rượu Champange',list:[{text:'Rượu chivas',href:'../pages/detail/detail.html',num:12},{text:'Rượu Walker',href:'!#',num:50},{text:'Rượu Quế',href:'!#',num:50},{text:'Rượu Tequilla',href:'!#',num:33},{text:'Rượu Treva',href:'!#',num:50}]},{title:'Rượu Ngoại',list:[{text:'Rượu chivas',href:'../pages/detail/detail.html',num:12},{text:'Rượu Walker',href:'!#',num:50},{text:'Rượu Quế',href:'!#',num:50},{text:'Rượu Tequilla',href:'!#',num:33},{text:'Rượu Treva',href:'!#',num:50}]}]
+- var tags = [{text:'Đồng hồ',isActive:true},{text:'Tủ'},{text:'Quần áo'},{text:'Nước hoa'},{text:'Thời trang nữ'}]
+aside.product-sidebar 
+    .product-sidebar-head 
+        +title({text:'Danh sách sản phẩm'})
+    each list in sidebarList
+        +listProduct(list)
+    .product-sidebar-head
+        +title({text:'So sánh sản phẩm'})
+    p Bạn chưa có sản phẩm nào để so sánh
+    .product-sidebar-head
+        h2 Tag sản phẩm 
+    +listTag({list:tags})
+    img(src=`${assets}/all-2.jpg`).img-fluid
+    

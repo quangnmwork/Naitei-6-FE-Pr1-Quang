@@ -1,0 +1,12 @@
+extends ../../base/layout
+
+
+block customHead 
+    link(rel="stylesheet", href="../../css/main.css")
+    title Giỏ hàng của bạn
+
+block content
+    include ../../layout/topbar
+    include ../../layout/navigation
+    include ../../page-component/cart/breadcrumb
+    include ../../page-component/cart/main
