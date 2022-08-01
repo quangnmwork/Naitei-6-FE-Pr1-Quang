@@ -58,10 +58,6 @@ mixin button(obj)
             li.nav-menu-item 
                 a(href= item.href)= item.name
 
-mixin button(obj)
-    button.btn(class= obj.class)= obj.text
-
-
 mixin specialProduct(obj) 
     .special-time 
         p.special-time-number= obj.num
@@ -73,20 +69,28 @@ mixin sectionHeading(text)
         img(src=`${assets}title-dark.png`,alt='gioi thieu')
 
 mixin productCard(obj)
+    -var isSale = obj.isSale != null
     .product-card 
-        .product-img 
-            -var isSale = obj.isSale != null
+        .product-img     
             if isSale
                 .special-sale 
                     img(src=obj.img,alt='').img-fluid
                     span= obj.text
             else 
                 img(src=obj.img,alt='').img-fluid
+            .product-quick 
+                .product-quick-box 
+                    i.bi.bi-suit-heart-fill
+                    span Yêu thích 
+                .product-quick-box 
+                    i.bi.bi-bar-chart-fill
+                    span So sánh  
         .product-info 
             h3.product-name= obj.name
             .product-price 
                 span.product-price-main= obj.price
-                span.product-price-discount= obj.discount
+                if obj.discount
+                    span.product-price-discount= obj.discount
             button.btn.product-btn ADD TO CART            
 
 mixin productDisplay(obj)
@@ -115,3 +119,8 @@ mixin footerCol(obj)
     h3.footer-head= obj.title
     if block   
         block
+
+
+mixin title(obj)
+    h2.text-uppercase= obj.text
+    img(src=`${assets}titleleft-dark.png`,alt='Rượu vang champange')
