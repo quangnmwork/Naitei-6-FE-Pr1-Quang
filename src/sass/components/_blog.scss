@@ -6,7 +6,7 @@
     margin-top: 18px;
   }
   &-img {
-    @include aspect-ratio(4, 3);
+    @include aspect-ratio(6, 5);
   }
   &-info {
     color: var(--color-gray);

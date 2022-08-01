@@ -1,0 +1,16 @@
+.form {
+  &-control {
+    margin: 15px 0;
+    padding: 0 !important;
+  }
+  &-label {
+    padding: 0 !important;
+  }
+
+  &-input,
+  &-area {
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}

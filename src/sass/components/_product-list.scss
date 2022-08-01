@@ -1,0 +1,33 @@
+.product-list {
+  &-card {
+    @include flex($align: center);
+    margin-top: 25px;
+  }
+
+  &-name {
+    font-size: 25px;
+    line-height: 31px;
+    color: var(--color-product);
+  }
+
+  &-price {
+    color: var(--color-primary);
+    font-size: 34px;
+    line-height: 31px;
+    margin: 15px 0;
+  }
+
+  &-desc {
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  &-group {
+    @include flex($align: center, $gap: 0 20px);
+  }
+
+  &-btn {
+    padding: 10px 20px !important;
+    margin-top: 18px;
+  }
+}

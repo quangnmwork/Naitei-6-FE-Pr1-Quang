@@ -1,0 +1,47 @@
+.cart {
+  &-img {
+    max-height: 145px;
+    margin: 10px 0;
+  }
+  &-table {
+    margin-top: 30px !important;
+    overflow-x: auto;
+  }
+  &-head {
+    th {
+      background-color: var(--color-topbar);
+      border: 2px solid var(--color-gray);
+    }
+  }
+  tr {
+    text-align: center;
+    font-size: 16px;
+  }
+
+  &-body {
+    td {
+      background-color: var(--color-topbar);
+      border: 2px solid var(--color-gray);
+    }
+  }
+
+  &-btn {
+    cursor: pointer;
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
+
+  &-bold {
+    color: var(--color-primary);
+    font-weight: bold;
+  }
+
+  &-group-btn {
+    text-align: right;
+    margin-top: 20px !important;
+    button {
+      padding: 8px 16px !important;
+    }
+  }
+}

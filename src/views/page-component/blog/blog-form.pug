@@ -1,0 +1,10 @@
+include ../../abstract/form
+include ../../abstract/mixins
+
+- var fields = [{id:'name',label:'Tên',type:'text'},{id:'email',label:'Email',type:'email'},{id:'desc',label:'Miêu tả',isTextarea:true,row:10},{id:'submit',label:'',type:'submit',value:'Gửi ý kiến',classInput:'blog-detail-form-btn'}]
+
+
+form.blog-detail-form 
+    h3.blog-detail-form-heading Đóng góp ý kiến 
+    each item in fields 
+        +field(item)

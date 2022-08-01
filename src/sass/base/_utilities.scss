@@ -3,6 +3,10 @@
   height: auto;
 }
 
+.text-uppercase {
+  text-transform: uppercase;
+}
+
 @each $key, $value in $gutters {
   .px-#{$key} {
     padding-left: $value !important;

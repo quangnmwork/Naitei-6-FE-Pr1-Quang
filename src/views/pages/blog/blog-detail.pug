@@ -1,0 +1,12 @@
+extends ../../base/layout
+
+
+block customHead 
+    link(rel="stylesheet", href="../../css/main.css")
+    title Blog Detail
+
+block content
+    include ../../layout/topbar
+    include ../../layout/navigation
+    include ../../page-component/blog/breadcrumb
+    include ../../page-component/blog/blog-detail

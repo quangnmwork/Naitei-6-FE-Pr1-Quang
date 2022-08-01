@@ -1,0 +1,9 @@
+mixin field(obj)
+    .row.gx-0.form-control
+        label(for=obj.id).col-lg-2.form-label= obj.label
+        .col-lg-10
+            if obj.isTextarea
+                textarea(id=obj.id,name=obj.id, cols=obj.col, rows=obj.row,class=obj.classInput).form-area
+            else 
+                input(type=obj.type,id=obj.id,value=obj.value,class=obj.classInput).form-input
+            

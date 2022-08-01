@@ -1,0 +1,14 @@
+include ../../abstract/mixins
+
+- var desc = 'Vang nổ Thăng Long có hương vị đặc trưng của sản phẩm lên men tự nhiên từ hoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn.Vang Nổ thăng long tạo cảm giác hương phấn, êm dịu, vui tươi, sản phẩm được đóng chai dung tích 750 ml.Rượu Vang nổ Thăng Long là loại rượu vang sử dụng trong các bữa tiệc cưới khi cô dâu và chú rể bật nắp mừng ngày vui của gia đình, phần lớn được sử dụng trong việc thay thế thay vì đổ các loại rượu đắt tiền của nước ngoài như Champagne thì rượu vang nổ thăng long là một lựa chọn giá thành rẻ phù hợp với nhu cầu của khách hàng.';
+
+.container-fluid.about 
+    .container
+        .row.gx-5 
+            .col-lg-12 
+                +title({text:"Giới thiệu"})
+            .col-lg-6.col-md-12.about-img 
+                img(src=`${assets}/gallery-2.jpg`).img-fluid
+            .col-lg-6.col-md-12.about-desc
+                h2 Chào mừng đến với Wine House 
+                p= desc

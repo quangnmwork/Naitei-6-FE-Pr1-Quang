@@ -1,0 +1,17 @@
+mixin blogCard(obj)
+    .blog-detail-card 
+        .blog-detail-img 
+            img(src=obj.img,alt='').img-fluid
+        .blog-detail-info
+            h3.blog-detail-name= obj.name
+            .blog-detail-date 
+                span.bi.bi-calendar
+                span= obj.date    
+
+mixin blogComment(obj)
+    .blog-comment-info
+        p.blog-comment-author 
+            span= Bình luận bởi `${obj.author}`
+            span= Cách đây `${obj.time}`
+        p.blog-comment-res Trả lời 
+    
