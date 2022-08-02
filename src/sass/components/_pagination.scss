@@ -3,6 +3,7 @@
   border: 2px solid var(--color-border-pagination);
   padding: 5px 10px;
   font-size: 18px;
+
   &-type {
     & > a {
       display: inline-block;
@@ -13,17 +14,24 @@
         color: var(--color-pagination-hover);
       }
     }
+
     &--active {
       color: var(--color-pagination-hover) !important;
     }
   }
+
   &-list {
     @include flex($align: center, $gap: 0 5px);
     list-style-type: none;
 
     &-item {
       cursor: pointer;
+
       &:hover {
+        color: var(--color-pagination-hover);
+      }
+
+      &--active {
         color: var(--color-pagination-hover);
       }
     }

@@ -20,32 +20,36 @@ mixin paginationType(obj)
      
 
 mixin listTag(obj)
-    ul.product-sidebar-tag 
+    ul.tag-list
         each item in obj.list
             if item.isActive 
-                li.product-sidebar-tag-item.product-sidebar-tag-item--active= item.text
+                li.tag-item.tag-item--active= item.text
             else 
-                li.product-sidebar-tag-item= item.text
+                li.tag-item= item.text
 
 mixin pagination(obj)
     ul.pagination-list
         i.bi.bi-chevron-left
         each item,i in Array(obj.num)
-            li.pagination-list-item= i+1
+            -var check = i == obj.currentPage
+            if check 
+                li.pagination-list-item.pagination-list-item--active= i+1
+            else 
+                li.pagination-list-item= i+1
         i.bi.bi-chevron-right
 
 
 mixin productListCard(obj)
     - var icons = [{text:"Yêu thích",icon:"bi bi-suit-heart-fill"},{text:"So sánh",icon:"bi bi-bar-chart-fill"}]
     .product-list-card 
-        .product-list-img.col-lg-4
-            img(src=obj.img,alt='').img-fluid
-        .product-list-info.col-lg-8
-            .product-list-name= obj.name
-            .product-list-price= obj.price
-            .product-list-desc= obj.desc
-            .product-list-group 
-                +button({text:'Add to cart',class:'product-list-btn'})
-                +btnIcon({icons})
-
-        
+        .col-lg-4
+            .product-list-img
+                img(src=obj.img,alt='').img-fluid
+        .col-lg-8
+            .product-list-info
+                .product-list-name= obj.name
+                .product-list-price= obj.price
+                .product-list-desc= obj.desc
+                .product-list-group 
+                    +button({text:'Add to cart',class:'product-list-btn'})
+                    +btnIcon({icons})

@@ -9,9 +9,11 @@ mixin blogCard(obj)
                 span= obj.date    
 
 mixin blogComment(obj)
-    .blog-comment-info
-        p.blog-comment-author 
-            span= Bình luận bởi `${obj.author}`
-            span= Cách đây `${obj.time}`
-        p.blog-comment-res Trả lời 
+    .blog-detail-comment-info
+        p.blog-detail-comment-author 
+            span=`Bình luận bởi ${obj.author}`
+            span=`Cách đây ${obj.time}`
+        p.blog-detail-comment-res Trả lời 
+    p.blog-detail-comment-desc= obj.desc
+
     

@@ -17,6 +17,7 @@
     font-size: 14px;
     line-height: 21px;
     text-transform: uppercase;
+
     &:nth-of-type(1) {
       margin-top: 20px;
     }
@@ -25,14 +26,17 @@
     font-size: 14px;
     line-height: 21px;
     margin: 5px 0;
+
     &:hover {
       a {
         color: var(--color-primary);
       }
     }
+
     a {
       color: var(--color-footer-link);
     }
+
     span {
       margin-left: 5;
     }
