@@ -1,0 +1,23 @@
+include ../../abstract/mixins
+-var timeBox = [{num:334,unit:'Ngày'},{num:24,unit:'Giờ'},{num:25,unit:'Phút'},{num:06,unit:'Giây'}];
+
+section.container-fluid.section-special
+    .container
+        .row.gx-5
+            .col-lg-12.special-container
+                .special-bg
+                    img(src=`${assets}special-product.jpg`,alt='Rượu vang champange').img-fluid
+                .special-product.row.gx-0
+                    .special-product-img.col-lg-7.col-md-12
+                        .special-sale 
+                            img(src=`${assets}special-product-img.jpg`,alt='Rượu vang champange').img-fluid
+                            span SALE
+                    .special-product-detail.col-lg-5.col-md-12
+                        h2 Chi tiết sản phẩm
+                        img(src=`${assets}titleleft-dark.png`,alt='Rượu vang champange')
+                        p.special-product-price 330000
+                        +button({text:'Add to cart',class:'special-btn'})
+                        p.special-product-desc Một hợp chất có trong rượu vang được gọi là resveratro có khả năng làm tăng tối đa tuổi thọ. Resveratro còn có khả năng ngăn chặn mật độ oxy hoá của protein béo.
+                        .special-time-box 
+                            each item in timeBox 
+                                +specialProduct(item)

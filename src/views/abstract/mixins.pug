@@ -1,0 +1,126 @@
+-assets = '../../assets/';
+
+mixin topbar(currentPage)
+    -var topbarItems = [{"name":'Tài khoản của tôi',"href":"#"},{"name":'Trạng thái đơn hàng',"href":"#"},{"name":'Danh sách ưa thích',"href":"#"},{"name":'Đăng nhập',"href":"#"},{"name":'Đăng ký',"href":"#"}];
+    ul.topbar-list.col-lg-7.col-md-12        
+        each item in topbarItems
+            li.topbar-item
+                a("href"= item.href)= item.name
+    .topbar-search.col-lg-5.col-md-12
+        form
+            input(type="text",placeholder="Tìm kiếm ở đây")
+            button(aria-label="Search button")
+                i.bi.bi-search
+
+mixin navigation(currentPage)
+    -var navItems = [{name:"Trang chủ",href:"#"},{name:"Rượu vang đỏ",href:"#"},{name:"Rượu trắng",href:"#"},{name:"Champange",href:"#"},{name:"Thông tin",href:"#"},{name:"Blog",href:"#"},{name:"Liên hệ",href:"#"}];
+    - var itemCol1 = {title:'Rượu ngoại',list:[{text:'Rượu chivas',href:'../pages/detail/detail.html'},{text:'Rượu Walker',href:'!#'},{text:'Rượu Quế',href:'!#'},{text:'Rượu Tequilla',href:'!#'},{text:'Rượu Treva',href:'!#'}]};
+    input#menuToggle.nav-toggle(type='checkbox')
+    label.nav-icon(for='menuToggle')
+        i.bi.bi-list
+    ul.nav-menu.col-lg-10
+        each item in navItems 
+            -var check = item.name.toString() == 'Rượu vang đỏ'
+            if !check 
+                li.nav-menu-item 
+                    a(href= item.href)= item.name
+            else 
+                li.nav-menu-item 
+                    label.nav-dropdown-icon(for='wineToggle')= item.name
+                    input#wineToggle.nav-dropdown-toggle(type='checkbox')
+                    nav.nav-dropdown.nav-dropdown-container
+                        .nav-dropdown-content
+                            .nav-dropdown-box
+                                +navCol(itemCol1)
+                            .nav-dropdown-box
+                                +navCol(itemCol1)
+                            .nav-dropdown-box
+                                +navCol(itemCol1)
+                            .nav-dropdown-box
+                                .nav-dropdown-img 
+                                    img(src=`${assets}gallery-2.jpg`,alt='').img-fluid
+
+mixin navCol(obj)
+    h3.nav-dropdown-head= obj.title
+    ul.nav-dropdown-col
+        each item in obj.list
+            li.nav-dropdown-link 
+                a(href=item.href)= item.text 
+
+mixin button(obj)
+    if obj.text
+        button.btn(class= obj.class)= obj.text
+    else 
+        button.btn(class= obj.class)
+            block
+
+        each item in navItems 
+            li.nav-menu-item 
+                a(href= item.href)= item.name
+
+mixin specialProduct(obj) 
+    .special-time 
+        p.special-time-number= obj.num
+        p.special-time-unit= obj.unit
+
+mixin sectionHeading(text)
+    .intro-heading
+        h2.intro-title= text
+        img(src=`${assets}title-dark.png`,alt='gioi thieu')
+
+mixin productCard(obj)
+    -var isSale = obj.isSale != null
+    .product-card 
+        .product-img     
+            if isSale
+                .special-sale 
+                    img(src=obj.img,alt='').img-fluid
+                    span= obj.text
+            else 
+                img(src=obj.img,alt='').img-fluid
+            .product-quick 
+                .product-quick-box 
+                    i.bi.bi-suit-heart-fill
+                    span Yêu thích 
+                .product-quick-box 
+                    i.bi.bi-bar-chart-fill
+                    span So sánh  
+        .product-info 
+            h3.product-name= obj.name
+            .product-price 
+                span.product-price-main= obj.price
+                if obj.discount
+                    span.product-price-discount= obj.discount
+            button.btn.product-btn ADD TO CART            
+
+mixin productDisplay(obj)
+    section.container-fluid(class=obj.class)
+    .container
+        +sectionHeading(obj.title)
+        .row.gx-5.my-3
+            each item in obj.wine 
+                .col-lg-3.col-md-4.col-sm-6
+                    +productCard(item)
+
+mixin blogItem(obj)
+    .blog 
+        .blog-img 
+            img(src=obj.img,alt='').img-fluid
+        h3.blog-title= obj.title
+        .blog-info  
+            span.blog-info-item= obj.author
+            span.blog-info-item= obj.time
+            - var comment = `${obj.num} Bình luận`
+            span.blog-info-item= comment
+        p.blog-desc= obj.desc
+        a.blog-more(href="#") Read more
+
+mixin footerCol(obj)
+    h3.footer-head= obj.title
+    if block   
+        block
+
+
+mixin title(obj)
+    h2.text-uppercase= obj.text
+    img(src=`${assets}titleleft-dark.png`,alt='Rượu vang champange')

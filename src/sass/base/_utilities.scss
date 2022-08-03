@@ -1,0 +1,33 @@
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+@each $key, $value in $gutters {
+  .px-#{$key} {
+    padding-left: $value !important;
+    padding-right: $value !important;
+  }
+  .py-#{$key} {
+    padding-top: $value !important;
+    padding-bottom: $value !important;
+  }
+  .p-#{$key} {
+    padding: $value $value !important;
+  }
+  .mx-#{$key} {
+    margin-left: $value !important;
+    margin-right: $value !important;
+  }
+  .my-#{$key} {
+    margin-top: $value !important;
+    margin-bottom: $value !important;
+  }
+  .m-#{$key} {
+    margin: $value $value !important;
+  }
+}

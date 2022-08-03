@@ -1,0 +1,141 @@
+.nav {
+  @include py(20px);
+  background: var(--color-black);
+
+  &-container {
+    justify-content: space-between;
+  }
+  &-title {
+    text-align: center;
+    color: var(--color-primary);
+    font-family: 'Dancing Script', cursive;
+    font-size: 29px;
+    h4 {
+      font-size: 16px;
+    }
+  }
+  &-menu {
+    @include flex($align: center, $justify: space-between);
+    padding-left: 20px;
+    list-style: none;
+
+    &-item {
+      &:nth-child(2) {
+        position: relative;
+      }
+      a {
+        font-size: 13px;
+        letter-spacing: 3px;
+        text-align: right;
+        color: var(--color-white);
+        display: inline-block;
+        &:hover {
+          color: var(--color-primary);
+        }
+      }
+
+      &--active {
+        color: var(--color-primary);
+      }
+    }
+  }
+  &-icon {
+    color: var(--color-white);
+    display: none;
+  }
+  &-toggle {
+    display: none;
+  }
+
+  @include media-breakpoint-down($name: 'lg') {
+    position: relative;
+    &-menu {
+      display: none;
+    }
+    &-toggle:checked ~ &-menu {
+      @include px(9rem);
+      position: absolute;
+      display: block;
+      width: 100%;
+      top: 100%;
+      left: 0;
+      background-color: var(--color-black);
+    }
+    &-toggle:checked ~ &-menu > &-menu-item {
+      padding: 5px 0;
+      border-bottom: 1px solid var(--color-primary);
+    }
+    &-title {
+      width: auto !important;
+    }
+    &-icon {
+      display: flex;
+      align-self: center;
+      width: auto !important;
+      font-size: 30px;
+      border: 2px solid var(--color-white);
+      padding: 2px 3px;
+      border-radius: 5px;
+    }
+  }
+  &-dropdown {
+    position: absolute;
+    z-index: 50;
+    color: var(--color-dropdown);
+    background-color: var(--color-white);
+    border-bottom: 2px solid var(--color-primary);
+    box-shadow: var(--shadow);
+    top: calc(100% + 40px);
+    padding: 10px 24px;
+    left: -200%;
+    font-size: 14px;
+    line-height: 30px;
+    color: var(--color-dropdown);
+    &-container {
+      display: none;
+    }
+
+    &-col {
+      list-style-type: none;
+    }
+    &-link {
+      white-space: nowrap;
+      a {
+        color: var(--color-dropdown);
+      }
+    }
+    &-toggle {
+      display: none;
+    }
+    &-img {
+      width: 349px;
+    }
+    &-icon {
+      font-size: 13px;
+      letter-spacing: 3px;
+      text-align: right;
+      color: var(--color-white);
+      position: relative;
+      z-index: 200;
+      display: inline-block;
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+    &-toggle:checked + &-container {
+      display: block;
+    }
+    &-toggle:checked + &-container > &-content {
+      @include flex($align: center, $gap: 0 20px);
+    }
+    @include media-breakpoint-down($name: 'lg') {
+      &-img {
+        display: none;
+      }
+      & {
+        left: 0;
+        top: calc(100%);
+      }
+    }
+  }
+}

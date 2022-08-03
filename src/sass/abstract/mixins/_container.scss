@@ -1,0 +1,69 @@
+@use 'sass:math';
+@mixin make-container($gutter: $container-padding-x) {
+  --gutter-x: #{$gutter};
+  --gutter-y: 0;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  padding-right: calc(var(--gutter-x) * 0.5);
+  padding-left: calc(var(--gutter-x) * 0.5);
+}
+@mixin make-col($size: false, $columns: $grid-columns) {
+  @if $size {
+    flex: 0 0 auto;
+    width: percentage(math.div($size, $columns)) !important;
+  } @else {
+    flex: 1 1 0;
+    max-width: 100%;
+  }
+}
+@mixin make-row($gutter: $grid-gutter-width) {
+  --gutter-x: #{$gutter};
+  --gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--gutter-y));
+  margin-right: calc(0.5 * var(--gutter-x));
+  margin-left: calc(0.5 * var(--gutter-x));
+}
+@mixin make-col-ready($gutter: $grid-gutter-width) {
+  --gutter-x: #{$gutter};
+  --gutter-y: 0;
+
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(var(--gutter-x) * 0.5);
+  padding-left: calc(var(--gutter-x) * 0.5);
+  margin-top: var(--gutter-y);
+}
+@mixin make-grid-columns(
+  $columns: $grid-columns,
+  $gutter: $grid-gutter-width,
+  $breakpoints: $grid-breakpoints
+) {
+  @each $breakpoint in map-keys($breakpoints) {
+    $prefix: breakpoint-prefix($breakpoint);
+    @each $key, $value in $gutters {
+      .gx-#{$key} {
+        --gutter-x: #{$value} !important;
+      }
+      .gy-#{$key} {
+        --gutter-x: #{$value} !important;
+      }
+      .g-#{$key} {
+        --gutter-x: #{$value} !important;
+        --gutter-y: #{$value} !important;
+      }
+    }
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+      @if $columns > 0 {
+        @for $i from 1 through $columns {
+          .col#{$prefix}-#{$i} {
+            @include make-col($i, $columns);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+.footer {
+  margin-top: var(--section-spacing);
+  &-head {
+    font-size: 18px;
+    line-height: 31px;
+    color: var(--color-black);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &-main {
+    margin-top: 56px;
+    margin-bottom: 20px;
+  }
+
+  &-link {
+    display: block;
+    color: var(--color-footer-link);
+    text-transform: uppercase;
+    line-height: 21px;
+    margin: 3px 0;
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
+
+  &-mail {
+    color: var(--color-footer-link);
+    font-size: 18px;
+    line-height: 31px;
+  }
+
+  &-input {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 0;
+    border: 1px solid var(--color-black);
+  }
+
+  &-btn {
+    clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+    padding: 10px 15px;
+  }
+
+  &-social {
+    @include flex($align: center, $gap: 0 12px);
+    margin-top: 23px;
+    color: var(--color-footer-link);
+    i:hover {
+      color: var(--color-primary);
+    }
+  }
+
+  &-address {
+    font-size: 14px;
+    line-height: 28px;
+    margin-top: 6px;
+    i {
+      font-weight: bold;
+      margin-right: 3px;
+    }
+  }
+}

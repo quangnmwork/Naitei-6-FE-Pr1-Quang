@@ -1,0 +1,55 @@
+$grid-columns: 12;
+$grid-gutter-width: 1.5rem;
+$container-padding-x: $grid-gutter-width;
+$spacer: 1rem;
+$grid-row-columns: 6;
+$enable-grid-classes: true !default;
+$enable-container-classes: true !default;
+$gutters: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+);
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px,
+) !default;
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+:root {
+  --color-primary: #e6ae48;
+  --color-white: #fff;
+  --color-product: #1a1a1a;
+  --color-topbar: #d6d6d6;
+  --color-black: #000;
+  --color-title-blog: #303030;
+  --color-detail-review: #737373;
+  --color-red: rgb(255, 28, 28);
+  --color-border-pagination: #e6e6e6;
+  --color-about: #303030;
+  --color-pagination: #c1c1c1;
+  --color-pagination-hover: #f26522;
+  --shadow: 10px 10px 15px -6px rgba(0, 0, 0, 0.75);
+  --color-title-desc: #a7a7a7;
+  --color-footer-link: #818181;
+  --color-dropdown: #050505;
+  --color-gray: #b4b4b4;
+  --color-product: #050505;
+  --btn-product: 12px 24px;
+  --bg-light: rgba(0, 0, 0, 0.35);
+  --bg-color: #fff;
+  --section-spacing: 120px;
+}

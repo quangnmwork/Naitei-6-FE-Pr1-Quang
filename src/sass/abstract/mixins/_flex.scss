@@ -1,0 +1,20 @@
+@mixin flex(
+  $justify: flex-start,
+  $align: stretch,
+  $direction: row,
+  $wrap: nowrap,
+  $gap: 0
+) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  @if $direction != 'row' {
+    flex-direction: $direction;
+  }
+  @if $wrap != 'nowrap' {
+    flex-wrap: $wrap;
+  }
+  @if $gap != 0 {
+    gap: $gap;
+  }
+}
