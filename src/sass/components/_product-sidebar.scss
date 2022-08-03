@@ -1,0 +1,44 @@
+.product-sidebar {
+  &-head {
+    font-size: 16px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    h2 {
+      margin-bottom: 5px;
+    }
+  }
+
+  &-list {
+    list-style-type: none;
+  }
+
+  &-title {
+    color: var(--color-footer-link);
+    font-size: 14px;
+    line-height: 21px;
+    text-transform: uppercase;
+
+    &:nth-of-type(1) {
+      margin-top: 20px;
+    }
+  }
+  &-item {
+    font-size: 14px;
+    line-height: 21px;
+    margin: 5px 0;
+
+    &:hover {
+      a {
+        color: var(--color-primary);
+      }
+    }
+
+    a {
+      color: var(--color-footer-link);
+    }
+
+    span {
+      margin-left: 5;
+    }
+  }
+}
