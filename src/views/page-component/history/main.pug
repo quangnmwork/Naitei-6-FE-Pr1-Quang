@@ -1,0 +1,22 @@
+include ../../abstract/mixins
+- var details = ['Trạng thái đơn hàng (16)','Đã huỷ (10)','Chưa duyệt (10)','Đã duyệt (0)','Đã thanh toán chưa mua hàng (0)','Chưa mua hàng (0)','Hàng đã về - chờ giao hàng (0)','Đã kết thúc (6)']
+
+- var items = [{icon:"bi bi-person-fill",text:"GiangLe Leanhgiang89@gmail.com"},{icon:"bi bi-geo-alt-fill",text:"Tòa nhà Hà Nội group 442 Đội Cấn"},{icon:"bi bi-telephone-fill",text:"+0123456789"}]
+
+.container-fluid 
+    .container 
+        .row.gx-5
+            .col-lg-12 
+                +title({text:"Đơn hàng"})
+            .col-lg-9.col-md-12.my-5
+                .history-main 
+                    h3.history-title Danh sách đơn hàng 
+                    ul.history-status-list 
+                        each item in details 
+                            li.history-status-item= item 
+                include ./table
+            .col-lg-3.col-md-12.my-5 
+                .history-customer 
+                    h3.history-title Thông tin khách hàng 
+                    +contactInfo({items})
+                    a(href='#') Chi tiết 

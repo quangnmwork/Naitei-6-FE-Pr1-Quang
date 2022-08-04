@@ -1,0 +1,31 @@
+include ../../abstract/mixins  
+include ../../abstract/form
+
+- var fields = [{id:'name',label:'Tên',type:'text',value:'Quân'},{id:'sc-name',label:'Họ&Tên đệm',type:'text',value:'Nguyễn Minh'},{id:'ct',label:'Công ty',type:'text',value:'abcxyz'},{id:'dc',label:'Địa chỉ',type:'text',value:'123 abc Str'},{id:'tp',label:'Thành phố',type:'text',value:'Florida'},{id:'dc',label:'Quốc tịch',type:'text',value:'Việt Nam'},{id:'dc',label:'ZipCode',type:'text',value:'0123321'}];
+- var radioBtn ={id:'radio',label:'Đặt làm mặc định',type:'radio',value:'Quên mật khẩu',classInput:'form-radio',isRadio:true}
+
+.container-fluid 
+    .container
+        .row.gx-5 
+            .col-lg-12 
+                +title({text:"Địa chỉ"})
+            .col-lg-6
+                +formEdit({fields,radioBtn,title:'Địa chỉ của bạn'})
+                    .form-btn-group.form-btn-group--left
+                        +button({text:'Chỉnh sửa thông tin',class:'form-btn'})
+                        +button({text:'Xoá',class:'form-btn'})
+            .col-lg-6
+                +formEdit({fields,radioBtn,isAdd:true,title:'Thêm địa chỉ'})
+                    .form-btn-group.form-btn-group--left
+                        +button({text:'Cập nhật',class:'form-btn'})
+                        +button({text:'Thoát',class:'form-btn'})
+        .row.gx-5 
+            .col-lg-6 
+                +formEdit({fields,disable:true})
+                    .form-btn-group
+                        a.form-btn-edit Chỉnh sửa địa chỉ
+        .row.gx-5 
+            .col-lg-6 
+                +formEdit({fields,disable:true})
+                    .form-btn-group
+                        a.form-btn-edit Chỉnh sửa địa chỉ

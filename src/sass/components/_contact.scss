@@ -1,0 +1,30 @@
+.contact {
+  &-head {
+    font-family: 'Dancing Script', cursive;
+    color: var(--color-primary);
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 2px;
+  }
+
+  &-info {
+    color: var(--color-footer-link);
+  }
+
+  &-icon {
+    margin-right: 5px;
+  }
+
+  &-social {
+    p {
+      margin: 5px 0;
+    }
+
+    span {
+      margin: 3px 5px;
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+  }
+}
