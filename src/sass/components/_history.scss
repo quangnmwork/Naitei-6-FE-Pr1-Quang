@@ -1,0 +1,54 @@
+.history {
+  &-main {
+    background-color: var(--color-topbar);
+    padding: 15px 25px;
+  }
+
+  &-status {
+    &-list {
+      @include flex($align: center, $wrap: wrap, $gap: 5px 10px);
+      list-style-type: none;
+      margin-top: 15px;
+      font-size: 13px;
+    }
+
+    &-item {
+      &:not(:last-child)::after {
+        content: '|';
+        margin: 0px 8px;
+      }
+    }
+  }
+
+  &-table {
+    width: 100%;
+    margin-top: 10px;
+    th {
+      text-transform: uppercase;
+      border: 2px solid var(--color-topbar);
+    }
+    td {
+      text-align: center;
+      border: 2px solid var(--color-topbar);
+
+      & > span {
+        display: block;
+        margin: 3px 0;
+      }
+    }
+  }
+
+  &-customer {
+    background-color: var(--color-topbar);
+    padding: 15px 25px;
+
+    &-icon {
+      margin-right: 5px;
+    }
+
+    a {
+      text-decoration: initial;
+      color: var(--color-black);
+    }
+  }
+}

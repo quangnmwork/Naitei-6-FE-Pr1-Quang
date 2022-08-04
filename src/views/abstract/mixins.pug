@@ -124,3 +124,10 @@ mixin footerCol(obj)
 mixin title(obj)
     h2.text-uppercase= obj.text
     img(src=`${assets}titleleft-dark.png`,alt='Rượu vang champange')
+
+
+mixin contactInfo(obj)
+    each item in obj.items 
+        p.contact-info 
+            span.contact-icon(class= item.icon )
+            span.contact-text= item.text 
