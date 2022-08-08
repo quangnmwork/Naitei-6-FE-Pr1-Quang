@@ -1,0 +1,49 @@
+.error {
+  background-color: var(--color-primary);
+  position: relative;
+  height: 70vh;
+  width: 100%;
+  z-index: -5;
+
+  & > * {
+    position: absolute;
+  }
+  &-big {
+    font-family: 'Dancing Script', cursive;
+  }
+  &-img {
+    left: 20%;
+  }
+  &-big,
+  &-text-box {
+    position: absolute;
+    top: 50%;
+  }
+
+  &-big {
+    left: 40%;
+    font-size: 140px;
+    line-height: 70px;
+  }
+
+  &-404 {
+    color: var(--color-white);
+    font-size: 450px;
+    top: 50%;
+    left: 45%;
+    height: 100%;
+    z-index: -3;
+    transform: translate(0, -50%);
+  }
+
+  &-text-box {
+    left: 50%;
+    font-size: 54px;
+    background-color: var(--color-primary);
+
+    & > span {
+      display: block;
+      margin: 20px 0;
+    }
+  }
+}
