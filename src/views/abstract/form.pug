@@ -1,0 +1,32 @@
+include ./mixins
+
+mixin field(obj)
+    - var obj = obj!=undefined ? obj : {};
+    .row.gx-0.form-control
+        .col-lg-2.gx-0
+            if obj.id && !obj.isRadio
+                label(for=obj.id).form-label= obj.label 
+        .col-lg-10.gx-0
+            if obj.isTextarea && obj.id
+                textarea(id=obj.id,name=obj.id, cols=obj.col, rows=obj.row,class=obj.classInput,value=obj.value,disabled=obj.disable).form-area
+            else if obj.id
+                input(type=obj.type,id=obj.id,value=obj.value,class=obj.classInput,name=obj.value,disabled=obj.disable).form-input
+                if obj.isRadio
+                    label(for=obj.id).form-label= obj.label
+            
+
+mixin formEdit(obj)
+    form
+        if obj.isAdd
+            h3.form-title.my-3.form-title--active=obj.title
+        else 
+            h3.form-title.my-3=obj.title
+        each item in obj.fields 
+            +field({...item,disable:obj.disable})
+        if !obj.disable
+            +field(obj.radioBtn)
+        if block
+            .row.gx-0
+                .col-lg-2.gx-0 
+                .col-lg-10.gx-0 
+                    block 

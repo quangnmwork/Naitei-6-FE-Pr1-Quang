@@ -1,0 +1,27 @@
+- var thead = ['STT','Mã hoá đơn và ngày mua hàng','Kho nhận hàng','Số SP','Tổng tiền','Tình trạng','Thao tác']
+- var mahoadon = 'LEANHGIANG-30/12'
+- var datePay = '30/12/2015'
+- var kho = 'Hà Đông'
+- var num = 7 ; 
+- var sum = 120000
+- var status = 'Giao hàng'
+- var data = {mahoadon,kho,datePay,num,sum,status};
+
+table(cellspacing="0").history-table
+    thead 
+        tr 
+            each item in thead 
+                th= item 
+
+    tbody 
+        each item,i in Array(6)
+            tr 
+                td= `0${i+1}`
+                td
+                    span= data.mahoadon 
+                    span= data.datePay 
+                td= data.kho 
+                td= data.num 
+                td= data.sum 
+                td= data.status 
+                td Chi tiết

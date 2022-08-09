@@ -1,0 +1,25 @@
+include ../../abstract/form
+include ../../abstract/mixins
+
+- var fieldsPassword = [{id:'password',label:'Mật khẩu',type:'password'},{id:'cfpassword',label:'Xác nhận mật khẩu',type:'cfpassword'}];
+- var infoPassword = [{id:'name',label:'Tên trước',type:'text'},{id:'name-af',label:'Tên sau',type:'text'},{id:'email',label:'Email',type:'email'},{id:'password',label:'Mật khẩu',type:'password'}];
+- var radioBtn ={id:'radio',label:'Quên mật khẩu',type:'radio',value:'Quên mật khẩu',classInput:'form-radio',isRadio:true}
+//- - var submitBtn = [{id:'submit',value:'Gửi',type:submit,label:'',classInput:'form-btn form-btn-resign btn'},{id:'submit',value:'Quay lại',type:submit,label:'',classInput:'form-btn form-btn-resign btn'}]
+
+.container-fluid.my-5 
+    .container 
+        .row.gx-5 
+            .col-lg-12 
+                +title({text:'Đăng ký'})
+            .col-lg-12.my-3
+                form.form-container 
+                    h3.form-title Thông tin cá nhân
+                    each item in infoPassword
+                        +field(item)
+                    +field(radioBtn)
+                    h3.form-title Thông tin đăng nhập
+                    each item in fieldsPassword 
+                        +field(item)
+                    .form-btn-group
+                        +button({text:'Gửi',class:'form-btn-resign'})
+                        +button({text:'Quay lại',class:'form-btn-resign'})

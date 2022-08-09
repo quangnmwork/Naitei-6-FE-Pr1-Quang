@@ -1,0 +1,35 @@
+mixin detailSlide(obj)
+    .detail-slide 
+        span.detail-slide-btn
+            i.bi.bi-arrow-up
+        each item in obj.listImg
+            if item.active
+                .detail-slide-img.detail-slide-img--active
+                    img(src=item.img,alt='').img-fluid
+            else 
+                .detail-slide-img
+                    img(src=item.img,alt='').img-fluid
+        span.detail-slide-btn 
+            i.bi.bi-arrow-down
+        
+mixin selectOptions(obj)
+    select.select
+        each item in obj.list
+            option(value=item).select-item= item
+
+
+mixin quantityInput(obj)
+    - const min = obj && obj.min ? obj.min : 1 ;
+    - const max = obj && obj.max ? obj.max : 10 ; 
+    form.quantity-box(onClick="return false;;")
+        button.quantity-btn &minus;
+        input.quantity-input(type='number' name='qty' min= min max= max step='1' value='1')
+        button.quantity-btn &plus;
+
+mixin btnIcon(obj)
+    -var icons = obj && obj.icons ? obj.icons :[{text:"Yêu thích",icon:"bi bi-suit-heart-fill"},{text:"So sánh",icon:"bi bi-bar-chart-fill"},{text:"Email",icon:"bi bi-envelope-fill"}]
+    .detail-icon
+        each item in icons 
+            .detail-icon-box 
+                i(class=item.icon)
+                span= item.text 

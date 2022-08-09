@@ -1,0 +1,10 @@
+mixin breadcrumb(obj)
+    .container-fluid
+        .container.my-4 
+            .row.gx-5
+                ul.breadcrumb-list 
+                    each item in obj.list
+                        if item == obj.active 
+                            li.breadcrumb-item.breadcrumb-item--active= item 
+                        else 
+                            li.breadcrumb-item= item

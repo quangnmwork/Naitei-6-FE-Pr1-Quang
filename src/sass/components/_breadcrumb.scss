@@ -1,0 +1,21 @@
+.breadcrumb {
+  &-list {
+    @include flex($align: center, $gap: 0px);
+    list-style: none;
+  }
+  &-item {
+    color: var(--color-footer-link);
+
+    &:not(:last-child)::after {
+      content: '/';
+      display: inline-block;
+      margin: 0 5px;
+      //   background-color: var(--color-footer-link);
+      color: var(--color-footer-link);
+    }
+
+    &--active {
+      color: var(--color-primary);
+    }
+  }
+}

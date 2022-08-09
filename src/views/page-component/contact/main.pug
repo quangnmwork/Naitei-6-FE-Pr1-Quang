@@ -1,0 +1,27 @@
+include ../../abstract/mixins
+include ../../abstract/form
+
+- var fields = [{id:'name',label:'Tên',type:'text'},{id:'email',label:'Email',type:'email'},{id:'desc',label:'Miêu tả',isTextarea:true,row:10}]
+- var items = [{icon:"bi bi-person-fill",text:"GiangLe Leanhgiang89@gmail.com"},{icon:"bi bi-geo-alt-fill",text:"Tòa nhà Hà Nội group 442 Đội Cấn"},{icon:"bi bi-telephone-fill",text:"+0123456789"}];
+- var social = ['bi bi-facebook','bi bi-messenger','bi bi-instagram','bi bi-twitter']
+.container-fluid 
+    .container 
+        .row.gx-5
+            .col-lg-12 
+                +title({text:"Liên hệ"})
+            .col-lg-9.col-md-12.my-5
+                .contact-img 
+                    img(src=`${assets}map.png`,alt='').img-fluid
+                +formEdit({fields})
+                    .form-btn-group.form-btn-group--left
+                        +button({text:'Gửi',class:'form-btn'})
+            .col-lg-3.col-md-12.my-5
+                .contact-info 
+                    .contact-head 
+                        h3 Wine House 
+                        h4 Since 1980
+                    +contactInfo({items})
+                    .contact-social 
+                        p Follow us 
+                        each item in social 
+                            span(class=item)

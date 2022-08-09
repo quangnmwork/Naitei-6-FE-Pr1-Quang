@@ -1,0 +1,118 @@
+.detail {
+  margin-top: 29px;
+  &-slide {
+    @include flex($direction: column, $align: center);
+
+    &-img {
+      margin: 20px 0;
+      border-bottom: 1px solid var(--color-footer-link);
+      padding: 3px 0;
+      &--active {
+        border: 2px solid var(--color-primary);
+      }
+    }
+
+    &-btn {
+      cursor: pointer;
+      &:nth-of-type(1) {
+        margin-bottom: 30px;
+      }
+
+      &:nth-of-type(2) {
+        margin-top: 30px;
+      }
+
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+  }
+
+  &-img {
+    img {
+      max-height: 100%;
+    }
+  }
+
+  &-review {
+    @include flex($align: center);
+    color: var(--color-detail-review);
+    &-num {
+      margin-left: 10px;
+      &::after {
+        content: '|';
+        display: inline-block;
+        margin: 0 10px;
+      }
+    }
+  }
+
+  &-price {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 31px;
+    color: var(--color-primary);
+    margin-top: 43px;
+  }
+
+  &-divider {
+    &:nth-of-type(1) {
+      margin-top: 8.5px;
+      margin-bottom: 9px;
+    }
+    &:nth-of-type(2) {
+      margin-top: 9px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &-title {
+    margin-top: 19.5px;
+    margin-bottom: 9.5px;
+    font-size: 16px;
+    color: var(--color-detail-review);
+    line-height: 31px;
+  }
+
+  &-bg {
+    width: 29px;
+    height: 29px;
+    display: inline-block;
+    margin: 0 1.5px;
+    &--active {
+      border: 2px solid var(--color-primary);
+    }
+    &-yellow {
+      background-color: var(--color-primary);
+    }
+    &--dark {
+      background-color: var(--color-black);
+    }
+    &--red {
+      background-color: var(--color-red);
+    }
+  }
+
+  &-quantity {
+    @include flex($align: center, $gap: 0 34px);
+
+    button {
+      height: 29px;
+    }
+  }
+
+  &-icon {
+    @include flex($align: center, $gap: 0 24px);
+    margin-top: 15px;
+
+    &-box {
+      @include flex($align: center, $gap: 0 5px);
+      cursor: pointer;
+
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+  }
+}

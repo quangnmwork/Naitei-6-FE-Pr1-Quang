@@ -1,0 +1,20 @@
+include ../../abstract/form
+include ../../abstract/mixins
+
+- var fields = [{id:'email',label:'Email',type:'email'},{id:'password',label:'Mật khẩu',type:'password'}];
+- var radioBtn ={id:'radio',label:'Quên mật khẩu',type:'radio',value:'Quên mật khẩu',classInput:'form-radio',isRadio:true}
+- var submitBtn = {id:'submit',value:'Đăng nhập',type:submit,label:'',classInput:'form-btn form-btn-login form-btn-resign btn'}
+
+.container-fluid.my-5 
+    .container 
+        .row.gx-5 
+            .col-lg-12 
+                +title({text:'Đăng nhập'})
+            .col-lg-12.my-3
+                form.form-container 
+                    h3.form-title Đăng nhập 
+                    p Nếu bạn có tài khoản vui lòng đăng nhập 
+                    each item in fields 
+                        +field(item)
+                    +field(radioBtn)
+                    +field(submitBtn)

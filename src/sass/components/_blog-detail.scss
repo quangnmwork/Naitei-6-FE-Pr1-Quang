@@ -1,0 +1,67 @@
+.blog-detail {
+  &-card {
+    @include flex($gap: 5px 10px);
+    margin-top: 15px;
+  }
+
+  &-name {
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  &-img {
+    width: 139px;
+  }
+
+  &-head {
+    font-size: 18px;
+
+    &:nth-of-type(2),
+    &:nth-of-type(3) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &-date {
+    @include flex($gap: 5px 10px);
+    font-size: 14px;
+    color: var(--color-pagination);
+    margin-top: 3px;
+  }
+
+  &-form {
+    margin-top: 32px;
+    &-heading {
+      margin-bottom: 20px;
+    }
+    &-btn {
+      width: auto !important;
+      padding: 10px 20px;
+    }
+  }
+
+  &-comment {
+    margin-top: 30px;
+
+    &-head {
+      text-transform: uppercase;
+    }
+    &-info {
+      @include flex($justify: space-between);
+      padding: 10px 20px;
+      background-color: var(--color-pagination);
+      margin-top: 15px;
+    }
+
+    &-author {
+      span {
+        margin: 0 10px;
+      }
+    }
+    &-desc {
+      font-size: 14px;
+      color: var(--color-comment);
+      padding: 5px 20px;
+    }
+  }
+}

@@ -1,0 +1,71 @@
+.form {
+  &-control {
+    margin: 15px 0;
+    padding: 0 !important;
+  }
+  &-label {
+    padding: 0 !important;
+  }
+
+  &-input,
+  &-area {
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  &-input:disabled {
+    background-color: transparent;
+    border: none;
+  }
+
+  &-radio {
+    color: var(--color-black);
+    text-align: left;
+    width: auto !important;
+  }
+
+  &-container {
+    padding: 20px 100px !important;
+    border: 2px solid var(--color-black);
+  }
+
+  &-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+
+    + p {
+      margin-bottom: 10px;
+    }
+
+    &--active {
+      text-decoration: underline !important;
+      color: var(--color-primary) !important;
+      cursor: pointer;
+    }
+  }
+
+  &-btn {
+    width: auto !important;
+    padding: 10px 15px !important;
+
+    &-group {
+      @include flex($gap: 20px, $justify: flex-end);
+      width: 100%;
+
+      &--left {
+        justify-content: flex-start !important;
+      }
+    }
+
+    &-resign {
+      padding: 10px 20px !important;
+    }
+
+    &-edit {
+      text-decoration: underline !important;
+      color: var(--color-primary) !important;
+      cursor: pointer;
+    }
+  }
+}

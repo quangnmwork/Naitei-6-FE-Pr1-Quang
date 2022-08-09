@@ -1,0 +1,15 @@
+include ../../abstract/blog
+include ../../abstract/all
+
+- var tags = [{text:'Đồng hồ',isActive:true},{text:'Tủ'},{text:'Quần áo'},{text:'Nước hoa'},{text:'Thời trang nữ'}]
+- var blogs = [{img:`${assets}gallery-7.jpg`,name:'Cách trang trí nội thất trong nhà',date:'30/12/2015'},{img:`${assets}gallery-5.jpg`,name:'Cách trang trí nội thất trong nhà',date:'30/12/2015'},{img:`${assets}gallery-6.jpg`,name:'Cách trang trí nội thất trong nhà',date:'30/12/2015'}];
+
+aside.blog-detail-sidebar.col-lg-3.my-5 
+        h2.blog-detail-head Bài viết mới nhất 
+        each item in blogs 
+            +blogCard(item)
+        h2.blog-detail-head Blog Tags 
+        +listTag({list:tags})
+        h2.blog-detail-head Latest video 
+        .blog-detail-video 
+            img(src=`${assets}gallery-2.jpg`).img-fluid

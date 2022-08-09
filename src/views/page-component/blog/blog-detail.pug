@@ -1,0 +1,19 @@
+include ../../abstract/mixins
+
+- var desc='Vang nổ Thăng Long có hương vị đặc trưng của sản phẩm lên men tự nhiên từ hoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn. Vang Nổ thăng long tạo cảm giác hương phấn, êm dịu, vui tươi, sản phẩm được đóng chai dung tích 750 ml.Vang nổ Thăng Long có hương vị đặc trưng của sản phẩm lên men tự nhiên từ hoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn. Vang Nổ thăng long tạo cảm giác hương phấn, êm dịu, vui tươi, sản phẩm được đóng chai dung tích 750 ml.';
+- var title = 'Vang thăng long';
+- var author = 'Giang';
+- var time = '30/12/2015';
+- var num = 60
+-var blog={title,img:`${assets}/gallery-2.jpg`,author,time,desc,num};
+
+.container
+    .row.gx-5 
+        .col-lg-12
+            +title({text:'Blog'})
+    .row.gx-5.blog-detail
+        include ./sidebar
+        .col-lg-9.my-5
+            +blogItem(blog)
+            include ./blog-form
+            include ./blog-comment
